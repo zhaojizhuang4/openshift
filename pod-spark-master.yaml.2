@@ -1,0 +1,43 @@
+apiVersion: v1
+kind: Pod
+metadata:
+ labels:
+   server-id: "1"
+   server-type: spark
+ name: pod-spark-master
+spec:
+ containers:
+  - name: spark
+    image: 172.30.251.136:5000/zhaojizhuang/spark
+    imagePullPolicy: IfNotPresent
+    command:
+     - /opt/entrypoint.sh 
+     - master
+    securityContext:
+      privileged: true
+    ports:
+    - containerPort: 6066
+      protocol: TCP
+    - containerPort: 7077
+      protocol: TCP
+    - containerPort: 7070
+      protocol: TCP
+    - containerPort: 8020
+      protocol: TCP
+    - containerPort: 8080
+      protocol: TCP
+    - containerPort: 8081
+      protocol: TCP
+    - containerPort: 19888
+      protocol: TCP
+    - containerPort: 50010
+      protocol: TCP
+    - containerPort: 50020
+      protocol: TCP
+    - containerPort: 50070
+      protocol: TCP
+    - containerPort: 50075
+      protocol: TCP
+    - containerPort: 50090
+      protocol: TCP
+

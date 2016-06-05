@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+ labels:
+   server-id: "1"
+   server-type: squid
+ name: pod-squid
+spec:
+ containers:
+  - name: spark
+    image: 172.30.251.136:5000/zhaojizhuang/squid-zjz
+    imagePullPolicy: IfNotPresent
+    securityContext:
+      privileged: true
+    ports:
+    - containerPort: 3128
+      protocol: TCP
+

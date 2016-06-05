@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: centos-ssh-rc-1
+spec:
+  replicas: 1
+  selector:
+    app: centos-ssh-1
+  template:
+    metadata:
+      labels:
+        app: centos-ssh-1
+    spec:
+      containers:
+      - name: centos-ssh-1
+        image: 172.30.251.136:5000/zhaojizhuang/centos-ssh:6

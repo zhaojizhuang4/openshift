@@ -1,0 +1,49 @@
+apiVersion: v1
+kind: Pod
+metadata:
+ labels:
+   server-id: "2"
+   server-type: hadoop
+ name: pod-hadoop-2
+spec:
+ containers:
+  - name: hadoop
+    image: 172.30.251.136:5000/zhaojizhuang/ruo91-hadoop
+    imagePullPolicy: IfNotPresent
+    securityContext:
+      privileged: true
+    ports:
+    - containerPort: 19888
+      protocol: TCP
+    - containerPort: 2122
+      protocol: TCP
+    - containerPort: 49707
+      protocol: TCP
+    - containerPort: 50010
+      protocol: TCP
+    - containerPort: 50020
+      protocol: TCP
+    - containerPort: 50070
+      protocol: TCP
+    - containerPort: 50075
+      protocol: TCP
+    - containerPort: 50090
+      protocol: TCP
+    - containerPort: 8020
+      protocol: TCP
+    - containerPort: 8030
+      protocol: TCP
+    - containerPort: 8031
+      protocol: TCP
+    - containerPort: 8032
+      protocol: TCP
+    - containerPort: 8033
+      protocol: TCP
+    - containerPort: 8040
+      protocol: TCP
+    - containerPort: 8042
+      protocol: TCP
+    - containerPort: 8088
+      protocol: TCP
+    - containerPort: 9000
+

@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+ labels:
+   server-id: "2"
+   server-type: spark
+ name: pod-spark-worker1
+spec:
+ containers:
+  - name: spark
+    image: 172.30.251.136:5000/zhaojizhuang/spark-zjz:0.1
+    imagePullPolicy: IfNotPresent
+    command:
+     - /opt/entrypoint.sh 
+     - worker
+     - svr-spark-master
+    environment:
+      SPARK_WORKER_CORES: 2
+      SPARK_WORKER_MEMORY: 3g
+    securityContext:
+      privileged: true
+

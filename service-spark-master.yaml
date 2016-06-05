@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+ name: svr-spark-master
+spec:
+ clusterIP: "None"
+ selector:
+  server-id: "1"
+  server-type: spark
+ sessionAffinity: None
+ type: ClusterIP
+ ports:
+ - nodePort: 0
+   port: 7077
+   protocol: TCP
+   targetPort: 7077

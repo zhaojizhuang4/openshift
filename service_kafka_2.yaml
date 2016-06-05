@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+ name: svr-kafka-2
+spec:
+ ports:
+ - nodePort: 0
+   port: 9092
+   protocol: TCP
+   targetPort: 9092
+ selector:
+  server-id: "2"
+  server-type: kafka
+ sessionAffinity: None
+ type: ClusterIP
+status:
+  loadBalancer: {}
